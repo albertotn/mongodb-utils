@@ -189,7 +189,7 @@ public final class DocumentUtil {
 		return recursiveNestedCreator(paths, 0, value, new Document());
 	}
 
-	private static Document recursiveNestedCreator(String[] paths, int i, Object value, Document current) {
+	static Document recursiveNestedCreator(String[] paths, int i, Object value, Document current) {
 		if (paths == null) {
 			return current;
 		}
