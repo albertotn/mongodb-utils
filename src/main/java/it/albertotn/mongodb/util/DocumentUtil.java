@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
-import com.mongodb.util.JSON;
 
 /**
  * Utility class for handling {@link Document}
@@ -78,7 +77,7 @@ public final class DocumentUtil {
 		if (document == null || jsonPath == null) {
 			return null;
 		}
-		final String json = JSON.serialize(document);
+		final String json = document.toJson();
 		try {
 			return JsonPath.read(json, jsonPath);
 		} catch (PathNotFoundException pnf) {
